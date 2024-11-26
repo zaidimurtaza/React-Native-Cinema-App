@@ -179,7 +179,6 @@ const CinemaScreen = () => {
       <View style={styles.featuredOverlay}>
         <Text style={styles.featuredTitle}>{item.title}</Text>
       </View>
-      
       </View>
      </Link>
   );

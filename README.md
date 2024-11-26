@@ -1,50 +1,70 @@
-# Welcome to your Expo app 👋
+# React Native Cinema App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
+This is a React Native Cinema App designed to provide users with an engaging way to browse and manage movies and shows. The app includes a grid view, filtering, and sorting capabilities to ensure a seamless browsing experience. Users can also manage a "To Watch" and "Watched" list, search for titles, and view detailed information for each movie/show.
 
-## Get started
+## Features
 
-1. Install dependencies
+### 1. **Grid View**
+Display movies and shows in a user-friendly grid layout.
+### 2. **Sort Alphabetically**
+Sort the list of movies and shows alphabetically for better organization.
+![Grid View](./assets/images/screen5.png)
 
+---
+
+
+
+
+---
+
+### 3. **Filter by Movie/Show**
+Toggle between viewing only movies or only shows, or view all items.
+![Filter by Movie/Show](./assets/images/screen6.jpg)
+
+---
+
+### 4. **Search Bar**
+Search for movies and shows by their titles in real-time.
+![Search Bar](./screenshots/search-bar.png)
+
+---
+
+### 5. **'Add' Button**
+Add movies or shows to a "To Watch" list for later viewing.
+![Add Button](./assets/images/screen3.jpg)
+
+---
+
+### 6. **To Watch/Watched Tab**
+Manage your watchlist with separate tabs for "To Watch" and "Watched" items.
+![Watch Later Tab](./assets/images/screen2.jpg)
+![Watched Tab](./assets/images/screen4.jpg)
+
+---
+
+### 7. **Detailed Page**
+Click on a movie or show to view a detailed page, including its description, cast, and more.
+![Detailed Page](./assets/images/screen1.jpg)
+
+---
+
+### 8. **Loader**
+Show a loading spinner while data is being fetched from the API.
+![Loader](./assets/images/screen7.jpg)
+
+---
+
+## Installation and Setup
+
+### Prerequisites
+Ensure you have the following installed:
+- **Node.js**: [Download and install Node.js](https://nodejs.org/)
+- **React Native CLI**: [Setup React Native environment](https://reactnative.dev/docs/environment-setup)
+
+### Installation
+
+1. Clone the repository:
    ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+   git clone https://github.com/zaidimurtaza/React-Native-Cinema-App.git
+   cd React-Native-Cinema-App
