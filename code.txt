@@ -1,0 +1,210 @@
+import React, { useState } from 'react';
+import { 
+  StyleSheet, 
+  View, 
+  Text, 
+  FlatList, 
+  Image, 
+  TouchableOpacity, 
+  StatusBar,
+  Dimensions 
+} from 'react-native';
+
+const moviesData = {
+  "To Watch": [
+    {
+      movieId: 1,
+      title: "Inception",
+      poster_url: "https://picsum.photos/id/237/200/300",
+      updatedAt: "2024-07-21",
+      genre: "Sci-Fi",
+    },
+    {
+      movieId: 3,
+      title: "Breaking Bad",
+      poster_url: "https://picsum.photos/id/238/200/300",
+      updatedAt: "2024-07-22",
+      genre: "Drama",
+    },
+    {
+      movieId: 4,
+      title: "The Matrix",
+      poster_url: "https://picsum.photos/id/239/200/300",
+      updatedAt: "2024-07-23",
+      genre: "Sci-Fi",
+    },
+    {
+      movieId: 5,
+      title: "Stranger Things",
+      poster_url: "https://picsum.photos/id/240/200/300",
+      updatedAt: "2024-07-24",
+      genre: "Sci-Fi",
+    }
+  ],
+  Watched: [
+    {
+      movieId: 2,
+      title: "Interstellar",
+      poster_url: "https://picsum.photos/id/252/200/300",
+      updatedAt: "2024-07-21",
+      genre: "Sci-Fi",
+    },
+  ],
+};
+
+const MovieListScreen = () => {
+
+  
+  const renderMovieItem = ({ item }) => (
+    <View style={styles.movieItem}>
+      <View style={styles.posterContainer}>
+        <Image 
+          source={{ uri: item.poster_url }} 
+          style={styles.poster} 
+          blurRadius={1}
+        />
+        <View style={styles.posterOverlay}>
+          <Text style={styles.posterGenre}>{item.genre}</Text>
+        </View>
+      </View>
+      <View style={styles.movieInfo}>
+        <Text style={styles.movieTitle} numberOfLines={1}>{item.title}</Text>
+        <Text style={styles.movieDate}>
+          Updated: {new Date(item.updatedAt).toLocaleDateString()}
+        </Text>
+      </View>
+    </View>
+  );
+
+  return (
+    <View style={styles.container}>
+      <StatusBar 
+        barStyle="dark-content" 
+        backgroundColor="transparent" 
+        translucent={true}
+      />
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>My Movies</Text>
+      </View>
+      <View style={styles.sectionSelector}>
+        {Object.keys(moviesData).map(section => (
+          <TouchableOpacity 
+            key={section}
+            style={[
+              styles.sectionSelectorItem,
+              activeSection === section && styles.activeSectionSelector
+            ]}
+            onPress={() => setActiveSection(section)}
+          >
+            <Text style={styles.sectionSelectorText}>{section}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+      <FlatList
+        data={moviesData[activeSection]}
+        renderItem={renderMovieItem}
+        keyExtractor={(item) => item.movieId.toString()}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        columnWrapperStyle={styles.row}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f0f0f0',
+  },
+  header: {
+    // flex:,
+    paddingTop: 30,
+    paddingBottom: 0,
+    paddingHorizontal: 16,
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    paddingLeft:50,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  headerTitle: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: 'black',
+  },
+  row: {
+    justifyContent: 'space-between',
+    marginHorizontal: 16,
+    marginBottom: 16,
+  },
+  sectionSelector: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingVertical: 16,
+    backgroundColor: 'white',
+  },
+  sectionSelectorItem: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    marginHorizontal: 8,
+    borderRadius: 20,
+  },
+  activeSectionSelector: {
+    backgroundColor: '#e0e0e0',
+  },
+  sectionSelectorText: {
+    color: 'black',
+    fontWeight: '600',
+  },
+  movieItem: {
+    width: Dimensions.get('window').width / 2 - 32,
+    backgroundColor: 'white',
+    borderRadius: 12,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+    marginBottom: 16,
+  },
+  posterContainer: {
+    position: 'relative',
+  },
+  poster: {
+    width: '100%',
+    height: 250,
+  },
+  posterOverlay: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  posterGenre: {
+    color: 'white',
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  movieInfo: {
+    padding: 12,
+  },
+  movieTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: 'black',
+    marginBottom: 4,
+  },
+  movieDate: {
+    color: '#888',
+    fontSize: 12,
+  },
+});
+
+export default MovieListScreen;
