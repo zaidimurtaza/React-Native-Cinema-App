@@ -6,6 +6,11 @@
 ## Overview
 This is a React Native Cinema App designed to provide users with an engaging way to browse and manage movies and shows. The app includes a grid view, filtering, and sorting capabilities to ensure a seamless browsing experience. Users can also manage a "To Watch" and "Watched" list, search for titles, and view detailed information for each movie/show.
 
+## Demo Video
+Here's an Demo of the app's features and usage:
+![Video](/assets/videos/Demo-Video.mp4)
+
+---
 ## Features
 
 ### 1. **Grid View**
