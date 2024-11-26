@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # React Native Cinema App
 
 # Welcome to Cinema app 👋
@@ -72,4 +70,4 @@ Ensure you have the following installed:
    ```bash
    git clone https://github.com/zaidimurtaza/React-Native-Cinema-App.git
    cd React-Native-Cinema-App
->>>>>>> a200d69f633bd47e7e3b950195cd3ef96f9ac4c1
+   ```
